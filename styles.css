@@ -1,0 +1,167 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient( rgba(19, 17, 17, 0.8), rgba(0, 0, 0, 0.5) ), url('./source/bg.jpg');
+    background-position: center;
+    background-attachment: fixed;  
+    scroll-behavior: smooth;                            
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    color: white;
+}
+
+.page-header {
+    display: flex;
+    font-family: "Comfortaa", sans-serif;
+    color: white;
+    height: 100vh;
+}
+
+.page-header__img{
+    height: 400px;
+    margin: auto;
+    margin-right: 0;
+    margin-top: 50px;
+    border-radius: 25px;
+    z-index: 20;
+}
+
+.greetings {
+    padding-left: 40px;
+    margin-top: 50px;
+    overflow: hidden;
+    margin-right: auto;
+}
+
+.greetings__title{
+    font-weight: normal;
+    font-size: 35px;
+    animation: toRightFromImage alternate 1.5s;
+    z-index: 10;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.greetings__text{
+    font-size: 23px;
+    animation: toRightFromImage forwards 1.5s 1.5s;
+    visibility: hidden;
+}
+
+.why {
+    visibility: hidden;
+    animation: toRightFromImage forwards 1.5s 3s;
+}
+
+.why__link {
+    display: block;
+    color: white;
+    transition: 0.7s;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.why__link:hover {
+    transform: translateX(20px);
+}
+
+.info {
+    font-family: "Comfortaa", sans-serif;
+    color: white;
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+.experience {
+    text-align: center;
+    line-height: 40px;
+    margin-left: 5%;
+    max-width: 30%;
+}
+
+.experience__list {
+    list-style: none;
+    font-size: 20px;
+}
+
+.experience__list li {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 182px;
+}
+
+.experience__list li:first-child{
+    border-top: 1px solid white;
+}
+
+.experience__element {
+    display: inline-block;
+}
+
+.info-title {
+    font-size: 30px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.hobby {
+    text-align: center;
+    line-height: 40px;
+    max-width: 30%;
+    margin-right: 5%;
+    margin-left: 10px;
+}
+
+.lang {
+    position: absolute;
+    left: 5%;
+    top: 20px;
+}
+
+.education {
+    text-align: center;
+    line-height: 40px;
+    max-width: 30%;
+    margin-left: 10px;
+}
+
+.lang__button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.lang__active {
+    text-decoration: underline;
+}
+
+.lang__button:not(.lang__active):hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+@keyframes toRightFromImage{
+    from{
+        transform: translateX(-120%);
+    }
+    to {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
