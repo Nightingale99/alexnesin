@@ -6,7 +6,7 @@ const translations = {
     greetings__text3: "Вливаюсь в любой коллектив, люблю и готов общаться.",
     greetings__text4: "Готов поделиться своим опытом с новыми специалистами.",
     greetings__text5: "И я буду идеальным дополнением вашей компании :)",
-    why__link: "Обо мне →",
+    why__link: "Обо мне",
   },
   en: {
     greetings__title: "Hello, I am Alexey Nesin.",
@@ -15,7 +15,7 @@ const translations = {
     greetings__text3: "I'm friendly to any team, love to talk and listen.",
     greetings__text4: "Would love to share my experience with new specialists.",
     greetings__text5: "I'll be an ideal addition to your company :)",
-    why__link: "About me →",
+    why__link: "About me",
   }
 }
 
@@ -52,3 +52,15 @@ en.addEventListener('click', () => {
   ru.classList.remove('lang__active');
   changeLanguage()
 });
+
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    effect: 'cards',
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+    }
+  })
