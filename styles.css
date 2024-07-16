@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     background: linear-gradient( rgba(19, 17, 17, 0.8), rgba(0, 0, 0, 0.5) ), url('./source/bg.jpg');
     background-attachment: fixed;  
+    background-position: center;
     scroll-behavior: smooth;                            
 }
 
@@ -10,6 +11,10 @@ ul {
     padding: 0;
 }
 
+h3 {
+    padding: 0;
+    margin: 0;
+}
 a {
     color: white;
 }
@@ -36,7 +41,7 @@ a {
 
 .greetings__title{
     font-weight: normal;
-    font-size: 35px;
+    font-size: 30px;
     animation: toRightFromImage alternate 1.5s;
     z-index: 10;
 }
@@ -46,30 +51,17 @@ a {
 }
 
 .greetings__text{
-    font-size: 23px;
+    font-size: 18px;
     animation: toRightFromImage forwards 1.5s 1.5s;
     visibility: hidden;
 }
 
-.why {
-    visibility: hidden;
-    animation: toRightFromImage forwards 1.5s 3s;
-}
-
-.why__link {
-    display: block;
-    color: white;
-    transition: 0.7s;
-    text-decoration: none;
-    font-size: 40px;
-    text-decoration: underline;
-}
-
-.why__link:hover {
-    transform: translateX(20px);
-}
+/* TODO:
+1. New hyperlink with arrow instead 'about me' */
 
 .info {
+    display: flex;
+    flex-direction: column;
     font-family: "Comfortaa", sans-serif;
     color: white;
     box-sizing: border-box;
@@ -159,11 +151,53 @@ a {
     height: 400px;
     margin-top: 50px;
     margin-right: 0;
+    margin-left: 5%;
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
     background-color: #fff;
     opacity: 100%;
+}
+
+.info {
+    color: white;
+}
+
+.skills-title {
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.next {
+    position: absolute;
+    animation: bounce alternate-reverse 1s infinite 1s;
+    bottom: 0;
+    left: 50vw;
+}
+.next__arrow {
+    width: 30px;
+    height: 30px;
+}
+
+.main-skill {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+    background-color: rgba(72, 77, 100, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    height: 100px;
+}
+
+.main-skill:last-child {
+    margin-bottom: 40px;
+}
+.hidden {
+    display: none !important;
 }
 @keyframes toRightFromImage{
     from{
@@ -172,6 +206,15 @@ a {
     to {
         transform: translateX(0);
         visibility: visible;
+    }
+}
+
+@keyframes bounce {
+    from {
+      transform: translateY(-20px);  
+    }
+    to {
+      transform: translateY(10);
     }
 }
 
@@ -194,6 +237,7 @@ a {
         font-size: 20px;
     }
     .greetings {
+        position: relative;
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 0;

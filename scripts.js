@@ -6,7 +6,6 @@ const translations = {
     greetings__text3: "Вливаюсь в любой коллектив, люблю и готов общаться.",
     greetings__text4: "Готов поделиться своим опытом с новыми специалистами.",
     greetings__text5: "И я буду идеальным дополнением вашей компании :)",
-    why__link: "Обо мне",
   },
   en: {
     greetings__title: "Hello, I am Alexey Nesin.",
@@ -15,10 +14,24 @@ const translations = {
     greetings__text3: "I'm friendly to any team, love to talk and listen.",
     greetings__text4: "Would love to share my experience with new specialists.",
     greetings__text5: "I'll be an ideal addition to your company :)",
-    why__link: "About me",
   }
 }
 
+let isArrowRemoved = false;
+const events = [];
+const thrasholdPageScroll = 0.3;
+
+window.addEventListener('scroll', (event) => {
+  const next = document.querySelector('.next');
+  const scrollPercent = window.scrollY / window.innerHeight;
+  if (scrollPercent  > thrasholdPageScroll) {
+    next.classList.add('hidden');
+    isArrowRemoved = true;
+  } else if (isArrowRemoved) {
+    next.classList.remove('hidden');
+    isArrowRemoved = false;
+  }
+})
 function changeLanguage() {
   const lang = document.querySelector('.lang__active').id;
   const title = document.querySelector('.greetings__title');
@@ -27,14 +40,12 @@ function changeLanguage() {
   const text3 = document.querySelector('.greetings__text3');
   const text4 = document.querySelector('.greetings__text4');
   const text5 = document.querySelector('.greetings__text5');
-  const link = document.querySelector('.why__link');
   title.textContent = translations[lang].greetings__title;
   text1.textContent = translations[lang].greetings__text;
   text2.textContent = translations[lang].greetings__text2;
   text3.textContent = translations[lang].greetings__text3;
   text4.textContent = translations[lang].greetings__text4;
   text5.textContent = translations[lang].greetings__text5;
-  link.textContent = translations[lang].why__link;
 }
 
 const ru = document.querySelector('#ru');
